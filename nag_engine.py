@@ -18,7 +18,8 @@ DEFAULT_SECRET_SALT = os.getenv("NAG_SECRET_SALT", "change-this-secret-salt-in-p
 SUSPICIOUS_PATHS: List[str] = [
     "/.env", "/.git", "/wp-admin", "/wp-login", "/phpmyadmin",
     "/config.json", "/backup", "/dump.sql", "/api/v1/admin",
-    "/etc/passwd", "/actuator", "/debug", "/shell"
+    "/etc/passwd", "/actuator", "/debug", "/shell",
+    "/wallet.dat", "/keystore", "/seed_phrase", "/private_key", "/mnemonic", "/solana/id.json"
 ]
 
 SUSPICIOUS_UA_KEYWORDS: List[str] = [

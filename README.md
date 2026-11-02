@@ -54,13 +54,33 @@ python server.py
 * Open `http://localhost:8099/nag/simulate-probe` to inspect a live AI-to-AI interception packet.
 * Open `http://localhost:8099/docs` for interactive Swagger API documentation.
 
-### 3. Or Plug into Any Existing FastAPI App (1 Line)
+### 3. Multi-Platform Integration (Python, Node.js, PHP / Laravel)
+
+#### Python (FastAPI / Starlette)
 ```python
 from fastapi import FastAPI
 from nag_engine import NAGSecurityMiddleware
 
 app = FastAPI()
 app.add_middleware(NAGSecurityMiddleware, secret_salt="your-custom-secret-salt")
+```
+
+#### Node.js (Express / Next.js / Web3 APIs)
+```javascript
+const express = require('express');
+const { nagExpressMiddleware } = require('./nag_middleware');
+
+const app = express();
+app.use(nagExpressMiddleware({ secretSalt: 'your-custom-secret-salt' }));
+```
+
+#### PHP / Laravel / Government & Enterprise Portals
+```php
+require_once 'NagMiddleware.php';
+use NAG\Security\NagMiddleware;
+
+$nag = new NagMiddleware('your-custom-secret-salt');
+$nag->guardOrContinue();
 ```
 
 ---
